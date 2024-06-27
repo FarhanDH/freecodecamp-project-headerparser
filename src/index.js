@@ -13,6 +13,7 @@ const router = require('./routes/headre-parser.routes');
 app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
+// app.set('views', __dirname + '/../views');
 app.use(express.static('public'));
 
 // API endpoint
@@ -22,3 +23,5 @@ app.use('/', router);
 const listener = app.listen(3000, function () {
     console.log('Your app is listening on port ' + listener.address().port);
 });
+
+module.exports = app
